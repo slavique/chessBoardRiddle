@@ -11,13 +11,17 @@ button, .which-cell-div, #manual-creation, #auto-creation, #assess-parity, #wich
 p:nth-child(2n) {
   background: #f0f0f0; }
 
+.calculations {
+  width: 35%;
+  float: left;
+  background-color: #99FFCC; }
+
 .which-cell-div {
   width: 97%;
   border-color: black;
   background-color: #D6D633; }
 
 .console {
-  background-color: #99FFCC;
   border-color: black;
   border-radius: 4px; }
 
@@ -35,6 +39,8 @@ p:nth-child(2n) {
   background-color: #FF00FF; }
 
 #board {
-  width: 50%; }
+  width: 50%;
+  float: right;
+  position: absolute; }
 
 /*# sourceMappingURL=main.css.map */

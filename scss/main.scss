@@ -18,6 +18,11 @@ p:nth-child(2n) {
 	background: $bg;
 }
 
+.calculations {
+	width: 35%;
+	float: left;
+	background-color: #99FFCC;
+}
 
 .which-cell-div {
 	@extend button;
@@ -27,7 +32,7 @@ p:nth-child(2n) {
 }
 
 .console {
-	background-color: #99FFCC;
+	
 	border-color: black;
 	border-radius: 4px;
 }
@@ -57,5 +62,7 @@ p:nth-child(2n) {
 
 #board {
 	width: 50%;
+	float: right;
+	position: absolute;
 }
 
