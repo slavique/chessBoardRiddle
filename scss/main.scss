@@ -1,0 +1,61 @@
+$ff: 'arial';
+$bg: #f0f0f0;
+
+body {
+	width: 100%;	
+	overflow: hidden; 
+}
+
+button {
+	font-family: $ff;
+	color: white;
+	height: 70px;
+	margin: 1%;
+}
+
+
+p:nth-child(2n) {
+	background: $bg;
+}
+
+
+.which-cell-div {
+	@extend button;
+	width: 97%;
+	border-color: black;
+	background-color: #D6D633;
+}
+
+.console {
+	background-color: #99FFCC;
+	border-color: black;
+	border-radius: 4px;
+}
+
+#manual-creation {
+	@extend button;
+	background-color: green;
+	width: 47%;
+}
+
+#auto-creation {
+	@extend #manual-creation;
+}
+
+#assess-parity {
+	@extend button;
+	background-color: black;
+	width: 97%;
+}
+
+#wich-to-flip {
+	@extend button;
+	width: 30%;
+	height: 40px;
+	background-color: #FF00FF;
+}
+
+#board {
+	width: 50%;
+}
+

@@ -1,0 +1,40 @@
+body {
+  width: 100%;
+  overflow: hidden; }
+
+button, .which-cell-div, #manual-creation, #auto-creation, #assess-parity, #wich-to-flip {
+  font-family: "arial";
+  color: white;
+  height: 70px;
+  margin: 1%; }
+
+p:nth-child(2n) {
+  background: #f0f0f0; }
+
+.which-cell-div {
+  width: 97%;
+  border-color: black;
+  background-color: #D6D633; }
+
+.console {
+  background-color: #99FFCC;
+  border-color: black;
+  border-radius: 4px; }
+
+#manual-creation, #auto-creation {
+  background-color: green;
+  width: 47%; }
+
+#assess-parity {
+  background-color: black;
+  width: 97%; }
+
+#wich-to-flip {
+  width: 30%;
+  height: 40px;
+  background-color: #FF00FF; }
+
+#board {
+  width: 50%; }
+
+/*# sourceMappingURL=main.css.map */
