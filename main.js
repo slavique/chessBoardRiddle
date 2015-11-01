@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {;
 
 
 
-
+  // eventListener for coin flipping
   board.addEventListener('click', function(event) {
     var target = event.target;
     flipping(target.getAttribute('id'));
