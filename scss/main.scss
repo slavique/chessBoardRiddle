@@ -37,6 +37,13 @@ p:nth-child(2n) {
 	border-radius: 4px;
 }
 
+.solution {
+	width: 35%;
+	float: left;
+	background-color: #99FFCC;
+	display: none;
+}
+
 #manual-creation {
 	@extend button;
 	background-color: green;
@@ -60,9 +67,15 @@ p:nth-child(2n) {
 	background-color: #FF00FF;
 }
 
+#solution-button {
+	width: 98%;
+	background-color: #9966FF;
+}
+
 #board {
 	width: 50%;
 	float: right;
 	position: absolute;
+	margin-left: 40%
 }
 

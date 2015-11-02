@@ -7,37 +7,47 @@ document.addEventListener('DOMContentLoaded', function() {;
   var filter2x4 = [];
   var filter2x5 = [];
 
-  var parityString, parityStringBackward, decCoinToFlip;
+  var parityString, decCoinToFlip;
   var assessParityBtn = document.getElementById('assess-parity');
+  var solutionBtn = document.getElementById('solution-button');
   var autoCoinPlacement = document.getElementById('auto-creation');
   var manualCoinPlacement = document.getElementById('manual-creation');
   var wichToFlip = document.getElementById('wich-to-flip');
   var printData = document.querySelector('.console');
+  var printSolution = document.querySelector('.console-1')
   var board = document.getElementById('board');
   var hideButton = document.getElementById('hide-button');
   var calculations = document.querySelector('.calculations');
+  var solution = document.querySelector('.solution');
 
 
-
+  // event Listeners
   // eventListener for coin flipping
   board.addEventListener('click', function(event) {
     var target = event.target;
     flipping(target.getAttribute('id'));
   }, false);
-
+  // eventListener for hide button
   hideButton.addEventListener('click', function() {
     calculations.style.display = (calculations.style.display == 'none') ? 'block' : 'none';
     hideButton.textContent = (calculations.style.display == 'none') ? 'show' : 'hide';
+    solution.style.display = (solution.style.display == 'block') ? 'none' : 'block';  
   });
+
+  // eventListener for figuring out which coin to flip
   wichToFlip.addEventListener('click', whichCoinToFlip);
+
   autoCoinPlacement.addEventListener('click', automaticallyCreateChessBoard);
+
   manualCoinPlacement.addEventListener('click', manualChessBoard);
 
-  assessParityBtn.addEventListener('click', assessParity);
+  assessParityBtn.addEventListener('click', function() {assessParity(printData, 'board binary mask')});
+
+  solutionBtn.addEventListener('click', function() {assessParity(printSolution, 'Jailer choose cell #')});
 
 
   // calculating odd/even parity for each of the 6 coin sets
-  function assessParity() {
+  function assessParity(printZone, infoText) {
 
     var _filter2x0 = filter2x0, _filter2x1 = filter2x1, _filter2x2 = filter2x2, _filter2x3 = filter2x3, _filter2x4 = filter2x4, _filter2x5 = filter2x5;
     //var _filter2x0 = [], _filter2x1 = [], _filter2x2 = [], _filter2x3 = [], _filter2x4 = [], _filter2x5 = [];
@@ -114,10 +124,10 @@ document.addEventListener('DOMContentLoaded', function() {;
     };
 
 
-    parityStringBackward = is2x5Odd + is2x4Odd + is2x3Odd + is2x2Odd + is2x1Odd + is2x0Odd;
-    decParity = parseInt(parityStringBackward, 2);
-    printData.innerHTML = printData.innerHTML + '<p>board binary mask: .......................' + parityStringBackward + ' (dec: ' + decParity + ')</p>';
-    console.log(parityStringBackward);
+    parityString = is2x5Odd + is2x4Odd + is2x3Odd + is2x2Odd + is2x1Odd + is2x0Odd;
+    decParity = parseInt(parityString, 2);
+    printZone.innerHTML = printZone.innerHTML + '<p>' + infoText + ': .......................' + parityString + ' (dec: ' + decParity + ')</p>';
+    console.log(parityString);
   };
 
 
@@ -281,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {;
     }
     for (var i = 0; i < magicCell.length; i++) {
       //console.log(magicCell[i]);
-      if ((magicCell[i] == 1 && parityStringBackward[i] == 1) || (magicCell[i] == 0 && parityStringBackward[i] == 0)) {
+      if ((magicCell[i] == 1 && parityString[i] == 1) || (magicCell[i] == 0 && parityString[i] == 0)) {
         coinToFlip = coinToFlip.concat('0');
       } else {
         coinToFlip = coinToFlip.concat('1');

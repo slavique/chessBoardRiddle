@@ -25,6 +25,12 @@ p:nth-child(2n) {
   border-color: black;
   border-radius: 4px; }
 
+.solution {
+  width: 35%;
+  float: left;
+  background-color: #99FFCC;
+  display: none; }
+
 #manual-creation, #auto-creation {
   background-color: green;
   width: 47%; }
@@ -38,9 +44,14 @@ p:nth-child(2n) {
   height: 40px;
   background-color: #FF00FF; }
 
+#solution-button {
+  width: 98%;
+  background-color: #9966FF; }
+
 #board {
   width: 50%;
   float: right;
-  position: absolute; }
+  position: absolute;
+  margin-left: 40%; }
 
 /*# sourceMappingURL=main.css.map */
