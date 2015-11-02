@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {;
   // eventListener for hide button
   hideButton.addEventListener('click', function() {
     calculations.style.display = (calculations.style.display == 'none') ? 'block' : 'none';
-    hideButton.textContent = (calculations.style.display == 'none') ? 'show' : 'hide';
+    hideButton.textContent = (calculations.style.display == 'none') ? 'calculations' : 'solution mode';
     solution.style.display = (solution.style.display == 'block') ? 'none' : 'block';  
   });
 
